@@ -7,16 +7,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var AppComponent = /** @class */ (function () {
-    function AppComponent() {
+var ProductSerachfilter = /** @class */ (function () {
+    function ProductSerachfilter() {
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'Home',
-            template: "<div>\n    <!--<About></About>-->\n    <productSelector></productSelector>\n    <OrderSelector></OrderSelector>\n    </div>"
+    ProductSerachfilter.prototype.transform = function (value, userEntered) {
+        userEntered = userEntered ? userEntered.toLowerCase() : null;
+        return userEntered ? value.filter(function (product) {
+            return product.productName.toLowerCase().indexOf(userEntered) != -1;
+        }) : value;
+    };
+    ProductSerachfilter = __decorate([
+        core_1.Pipe({
+            name: "productFilterName"
         })
-    ], AppComponent);
-    return AppComponent;
+    ], ProductSerachfilter);
+    return ProductSerachfilter;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.ProductSerachfilter = ProductSerachfilter;
+//# sourceMappingURL=productfilter.js.map

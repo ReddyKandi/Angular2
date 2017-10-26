@@ -5,6 +5,7 @@ import {Component} from '@angular/core';
     template:`<div>
     <!--<About></About>-->
     <productSelector></productSelector>
+    <OrderSelector></OrderSelector>
     </div>`
     
 })

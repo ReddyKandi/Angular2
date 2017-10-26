@@ -11,18 +11,26 @@ var platform_browser_1 = require("@angular/platform-browser");
 var app_component_1 = require("./app.component");
 var about_component_1 = require("./about.component");
 var products_1 = require("./products/products");
+var forms_1 = require("@angular/forms");
+var orders_1 = require("./orders/orders");
+var productfilter_1 = require("./products/productfilter");
+var starrating_1 = require("./shared/starrating");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             imports: [
-                platform_browser_1.BrowserModule
+                platform_browser_1.BrowserModule,
+                forms_1.FormsModule
             ],
             declarations: [
                 app_component_1.AppComponent,
                 about_component_1.AboutComponent,
-                products_1.ProductComponent
+                products_1.ProductComponent,
+                orders_1.OrdersComponent,
+                productfilter_1.ProductSerachfilter,
+                starrating_1.StartRating
             ],
             bootstrap: [app_component_1.AppComponent]
         })

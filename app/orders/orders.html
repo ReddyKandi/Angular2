@@ -1,0 +1,47 @@
+<div class="panel panel-primary">
+    {{pageTitle}}
+    <div class="">
+            <h4>Orders</h4>
+     </div>
+    <div class="panel-body">
+            <div class="row">
+                    <div class="col-md-2">Filter Orders By:</div>
+                    <div class="col-md-4">
+                        <input type="text" [(ngModel)]='orderFilter'/>
+                    </div>
+            </div>
+            <div class="row">
+                    <div class="col-md-6">
+                            Filtered By: {{orderFilter}}
+                    </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table" *ngIf='orders && orders.length'>
+                <tr>
+                    <th>
+                        <button class="btn btn-primary" (click)='showHideImage()'>
+                            {{showImage?'Hide Images':'Show Images'}}
+                        </button>
+                    </th>
+                    <th>Order</th>
+                    <th>Code</th>
+                    <th>Available</th>
+                    <th>Price</th>
+                    <th>StarRating</th>
+                </tr>
+                <tr *ngFor='let i of orders'>
+                    <td>
+                        <img *ngIf='showImage' [src]='i.imageUrl' [style.width.px]='imageWidth'>
+                    </td>
+                    <td>{{i.orderName | uppercase}}</td>
+                    <td>{{i.orderCode}}</td>
+                    <td>{{i.releaseDate}}</td>
+                    <td>{{i.price}}</td>
+                    <td>{{i.starRating}}</td>
+                    
+                </tr>
+            </table>
+            </div>
+    
+    </div>
+</div>
